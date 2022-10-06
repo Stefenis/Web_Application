@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EEI3346 LAB Test 04</title>
+  <script src="exam.js"></script>
+</head>
+<body>
+     <div>
+        <h1 style="text-align : center;">Calculator</h1>
+      </div>
+        <div style="text-align : center; border : 1px solid black; width : 30%;height:50%; margin-left :35%; ">
+          <p id="display" style= "background-color : gray; height : 50px;" ></p><br>
+          <p id="Txt">This is the answer</p>
+          <select  id="ddselect" onchange="ddlselect();">
+            <option >Select</option>
+            <option value="Add">Add</option>
+            <option value="Sub">Sub</option>
+            <option value="Mul">Mul</option>
+            <option value="Div">Div</option>
+          <select><br>
+          <input type="number" id="input1" placeholder="Enter Value"><br>
+          <input type="number" id="input2" placeholder="Enter Value"><br>
+          <input type="number" id="input3" placeholder="Enter Value"><br>
+          <input type="number" id="input4" placeholder="Enter Value"><br>
+          <button onclick="Click()">Calculate</button>
+          <button onclick="Del()">Clear</button>
+          </div>
+</body>
+</html>
