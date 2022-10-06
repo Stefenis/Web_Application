@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet"href="style.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+<style>
+    .container {
+        max-width: 960px;
+        margin: auto ;
+    }
+     h1 {
+          padding-top: 40px;
+     }
+           
+</style>
+</head>
+ <body>
+     
+    <header>
+        <div id="menu-bar" class="fas fa-bars"></div>
+      
+        <a href="#" class="logo"><span>T</span>ravel Sri Lanka</a>
+      
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="aboutus.html">About us</a>
+            <a href="place.html">Place</a>
+            <a href="booknow.html">Book now</a>
+            <a href="services.html">services</a>
+            <a href="gallery.html">gallery</a>
+            <a href="contact.html">contact</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div>
+    </header><br><br>
+       
+       <section class="book" id="book">
+     
+         <h1 class="heading">
+             <span><b>p</b></span>
+             <span><b>l</b></span>
+             <span><b>a</b></span>
+             <span><b>c</b></span>
+             <span><b>e</b></span>
+           
+         </h1>
+         
+
+        </section>
+     <section class="place" id="place">
+    
+        <div class="box-container">
+    
+            <div class="box">
+                <img src="p-1.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Yala National Park </h3>
+                    <p>Yala National Park is the most visited and second largest national park in Sri Lanka, bordering the Indian Ocean.  </p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    
+                </div>
+            </div>
+    
+            <div class="box">
+                <img src="p-2.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Dambulla Royal Cave Temple and Golden Temple </h3>
+                    <p>Dambulla cave temple also known as the Golden Temple of Dambulla is a World Heritage Site in Sri Lanka, situated in the central part of the country.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                   
+                </div>
+            </div>
+    
+            <div class="box1">
+                <div id="app" class="container">
+                    <h3>Enter the list of the places where they planned to visit</h3>
+                    <div v-if="!isEditing">
+                        <input type="text" v-model="todo">
+                        <input class="btn" type="submit" value="Add" @click="storeTodo">
+                    </div>
+                    <div v-else>
+                        <input type="text" v-model="todo">
+                        <input class="btn" type="submit" value="Update" @click="updateTodo">
+                    </div>
+            
+                    <ol>
+                        <li v-for="(todo, index) in todos">
+                            {{ todo }}
+                            <button class="btn" @click="editTodo(index, todo)">Edit</button>
+                            <button class="btn" @click="removeTodo(index)">Delete</button>
+                        </li>
+                    </ol>
+                    
+                </div>
+            </div>
+    
+            <div class="box">
+                <img src="p-3.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Sri Pada / Adam's Peak </h3>
+                    <p>Adam's Peak is a 2,243 m tall conical mountain located in central Sri Lanka. </p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+    
+            <div class="box">
+                <img src="p-4.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Galle Dutch Fort </h3>
+                    <p>Galle Fort, in the Bay of Galle on the southwest coast of Sri Lanka, was built first in 1588 by the Portuguese.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                   
+                   
+                </div>
+            </div>
+    
+            <div class="box1"><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <a href="galery2.html" class="btn">discover more</a>
+            </div>
+            
+            <div class="box">
+                <img src="p-5.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Sinharaja Forest Reserve </h3>
+                    <p>Sinharaja Forest Reserve is a forest reserve and a biodiversity hotspot in Sri Lanka.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="box">
+                <img src="p-6.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Horton Plains National Park </h3>
+                    <p>Horton Plains National Park is a national park in the central highlands of Sri Lanka that was designated in 1988.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="box">
+                <img src="p-7.jpg" alt="">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> Temple of the Sacred Tooth Relic </h3>
+                    <p>Temple of the Sacred Tooth Relic or Sri Dalada Maligawa; commonly known as the ශ්‍රී දළදා මාළිගාව, is a Buddhist temple in Kandy, Sri Lanka.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    
+         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+         <script>
+             new Vue({
+                 el: '#app',
+                 
+                 data: {
+                     isEditing: false,
+                     todo: '',
+                     todos: [],
+                     selectedTodo: null
+                 },
+                 
+                 methods: {
+                     storeTodo() {
+                         this.todos.push(this.todo)
+                         this.todo = ''
+                     },
+     
+                     removeTodo(index) {
+                         this.todos.splice(index, 1)
+                     },
+     
+                     updateTodo() {
+                         this.todos.splice(this.selectedIndex, 1, this.todo)
+                         this.todo = ''
+                         this.isEditing = false
+                     },
+     
+                     editTodo(index, todo) {
+                         this.isEditing = true
+                         this.todo = todo
+                         this.selectedIndex = index
+                     }
+                 }
+             })
+         </script>
+</body>
+</html>
